@@ -176,7 +176,7 @@ fn variables() {
     // x = 3; cannot assign twice to immutable variable `x`
     println!("x is {}", x);
 
-    // unless of course if you make it immutable
+    // unless of course if you make it mutable
     let mut y = 1;
     println!("y is {}", y);
     y = 2;
