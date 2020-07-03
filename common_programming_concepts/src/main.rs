@@ -17,7 +17,61 @@ fn main() {
 }
 
 fn control_flow() {
-    
+    let is_good_looking = true;
+    if is_good_looking { // parenthesis is not required and must be a bool
+        println!("😊");
+    } else {
+        println!("😔");
+    } // 😊
+
+    // Because if is an expression, we can use it on 
+    // the right side of a let statement.
+    // Remember that blocks of code evaluate to the last 
+    // expression in them, and numbers by themselves 
+    // are also expressions. Also type has to match, 
+    // else it's a compile error
+    let a = if is_good_looking { 5 } else { 6 }; // no ternary operator in Rust
+    println!("a is {}", a); // a is 5
+
+    // `if` and `else` have incompatible types
+    // let b = if is_good_looking { 5 } else { "no" };
+
+    // Rust has three kinds of loops: loop, while, and for
+    let mut a_loop = 3;
+    loop {
+        if a_loop > 0 {
+            println!("a_loop is {}", a_loop); // a_loop is 3..1
+            a_loop = a_loop - 1;
+        } else {
+            break;
+        }
+    }
+
+    // Returning Values from Loops
+    let mut counter = 0;
+    let a_loop_return = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    println!("a_loop_return is {}", a_loop_return); // a_loop_return is 20
+
+    let mut a_while = 3;
+    while a_while > 0 {
+        println!("a_while is {}", a_while); // a_while is 3..1
+        a_while = a_while - 1;
+    }
+
+    let arr0 = [1, 2, 3];
+    for e in arr0.iter() {
+        println!("e is {}", e); // e is 1..3
+    }
+
+    // reversed loop
+    for e in (1..3).rev() {
+        println!("e is {}", e); // e is 3..1
+    }
 }
 
 fn functions() {
