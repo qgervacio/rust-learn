@@ -129,7 +129,7 @@ fn data_types() {
     let y: u32 = "42".parse().expect("Not a number!");
     println!("y is {}", y);
 
-    // now annotation type is nont nneeded because 
+    // now annotation type is not needed because 
     // you helped the type inference algorithm using
     // 'turbofish' ::<>
     let z = "4".parse::<u32>();
